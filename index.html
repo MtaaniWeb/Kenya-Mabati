@@ -8,7 +8,7 @@
 <meta name="keywords" content="Kenya Mabati, mabati Kenya, mabati prices Kenya, mabati price per metre Kenya, mabati Ruiru, mabati factory Ruiru, roofing sheets Kenya, roofing sheets prices Kenya, mabati factory, Box Profile mabati, Corrugated mabati price Kenya, Roman Tile mabati, Versatile mabati, Gauge 28 mabati, Gauge 30 mabati, mabati suppliers Kenya, roofing materials Kenya, mabati delivery Kenya">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0d1b2a;
@@ -35,7 +35,7 @@
     width:100%;
   }
   h1,h2,h3,h4{
-    font-family:'Fraunces',serif;
+    font-family:'Poppins',sans-serif;
     font-weight:600;
     margin:0;
     line-height:1.1;
@@ -64,7 +64,7 @@
     border-bottom:3px solid var(--red);
   }
   .navbar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1160px;margin:0 auto;}
-  .brand{color:var(--white);font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;letter-spacing:0.01em;display:flex;flex-direction:column;line-height:1;}
+  .brand{color:var(--white);font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:0.01em;display:flex;flex-direction:column;line-height:1;}
   .brand span{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:0.6rem;color:var(--steel-light);margin-top:4px;letter-spacing:0.05em;}
   nav.links{display:flex;gap:28px;align-items:center;}
   nav.links a{color:var(--white);font-size:0.92rem;font-weight:500;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .15s;}
@@ -85,10 +85,15 @@
   .view.active{display:block;}
 
   /* HERO */
+  /* HERO BACKGROUND IMAGE — replace this one Cloudinary URL to change the hero photo */
   .hero{
-    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    --hero-image:url('https://res.cloudinary.com/hztm3zo8/image/upload/v1788929731/703472558843421fe960ca155add7a11_cwljjw.jpg');
+    background:
+      linear-gradient(180deg, rgba(10,17,40,0.35) 0%, rgba(10,17,40,0.55) 45%, rgba(8,13,32,0.94) 100%),
+      var(--hero-image) center/cover no-repeat,
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
     color:var(--white);
-    padding:76px 0 60px;
+    padding:76px 0 80px;
     position:relative;
     overflow:hidden;
   }
@@ -179,7 +184,9 @@
   /* FACTORY */
   .factory-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
   @media(max-width:800px){.factory-grid{grid-template-columns:1fr;}}
-  .factory-img{aspect-ratio:4/3;background:var(--navy);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--steel-light);font-family:'JetBrains Mono',monospace;font-size:0.75rem;text-align:center;padding:20px;}
+  .factory-img{aspect-ratio:4/3;background:var(--navy);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--steel-light);font-family:'JetBrains Mono',monospace;font-size:0.75rem;text-align:center;padding:20px;position:relative;overflow:hidden;}
+  .factory-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .factory-img .img-fallback{position:relative;z-index:0;}
   .info-line{display:flex;gap:10px;margin-top:18px;font-size:0.9rem;}
   .info-line .label{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--red);min-width:120px;}
 
@@ -192,7 +199,7 @@
   .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   @media(max-width:700px){.stat-grid{grid-template-columns:1fr 1fr;}}
   .stat{background:var(--navy);color:var(--white);padding:32px 20px;text-align:center;}
-  .stat .num{font-family:'Fraunces',serif;font-size:2rem;color:var(--red);margin-bottom:6px;}
+  .stat .num{font-family:'Poppins',sans-serif;font-weight:700;font-size:2rem;color:var(--red);margin-bottom:6px;}
   .stat .lbl{font-size:0.8rem;color:var(--steel-light);}
 
   /* QUOTE CTA */
@@ -247,7 +254,9 @@
   @media(max-width:560px){.shop-grid{grid-template-columns:1fr;}}
   .prod-card{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .15s;}
   .prod-card:hover{box-shadow:0 6px 20px rgba(13,27,42,0.1);}
-  .prod-img{aspect-ratio:4/3;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--steel-light);font-family:'JetBrains Mono',monospace;font-size:0.68rem;text-align:center;padding:14px;background-image:repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 4px, transparent 4px 18px);}
+  .prod-img{aspect-ratio:4/3;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--steel-light);font-family:'JetBrains Mono',monospace;font-size:0.68rem;text-align:center;padding:14px;background-image:repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 4px, transparent 4px 18px);position:relative;overflow:hidden;}
+  .prod-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .prod-img .img-fallback{position:relative;z-index:0;}
   .prod-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex-grow:1;}
   .prod-body h3{font-size:1.05rem;}
   .prod-body .price{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--red);}
@@ -258,10 +267,14 @@
   .btn-sm.ghost{border:1px solid var(--line);color:var(--navy);}
 
   /* PRODUCT DETAIL */
+  .pd-back{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:0.82rem;font-weight:600;color:var(--navy);padding:6px 0;}
+  .pd-back:hover{color:var(--red);}
   .pd-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;padding:52px 0;}
   .pd-layout > *{min-width:0;}
   @media(max-width:820px){.pd-layout{grid-template-columns:1fr;}}
-  .pd-img{aspect-ratio:4/3;background:var(--navy);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--steel-light);font-family:'JetBrains Mono',monospace;font-size:0.75rem;text-align:center;padding:20px;background-image:repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 4px, transparent 4px 18px);}
+  .pd-img{aspect-ratio:4/3;background:var(--navy);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--steel-light);font-family:'JetBrains Mono',monospace;font-size:0.75rem;text-align:center;padding:20px;background-image:repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 4px, transparent 4px 18px);position:relative;overflow:hidden;}
+  .pd-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .pd-img .img-fallback{position:relative;z-index:0;}
   .pd-tag{font-family:'JetBrains Mono',monospace;color:var(--red);font-size:0.78rem;margin-bottom:10px;}
   .pd-price{font-family:'JetBrains Mono',monospace;font-size:1.5rem;color:var(--navy);margin:10px 0 24px;}
   .opt-group{margin-bottom:22px;}
@@ -460,7 +473,7 @@
           <a href="#" class="btn btn-primary" onclick="go('contact');return false;">Contact Us</a>
         </div>
       </div>
-      <div class="factory-img"><!-- REPLACE IMAGE: CLOUDINARY_FACTORY_IMAGE_URL --><span>[ Factory image — Ruiru, Kamiti Road ]</span></div>
+
     </div>
   </section>
 
@@ -561,6 +574,9 @@
 
 <!-- ============ PRODUCT DETAIL ============ -->
 <div class="view" id="view-product">
+  <div class="wrap" style="padding-top:28px;">
+    <a href="#" class="pd-back" onclick="go('shop');return false;">&larr; Back to Shop</a>
+  </div>
   <div class="wrap pd-layout" id="productDetailRoot"></div>
 </div>
 
@@ -694,6 +710,10 @@
 /* ============ DATA ============ */
 const WHATSAPP_NUMBER = "254734959898";
 
+/* PRODUCT IMAGES — each product has its own "img" link below.
+   To update a photo: upload the new image to Cloudinary, copy its link, and paste it
+   over the existing img:"..." value for that product. Nothing else needs to change. */
+
 const PRODUCTS = [
   {
     id:"box-profile", name:"Box Profile Mabati", profile:"Box Profile",
@@ -701,7 +721,8 @@ const PRODUCTS = [
     colours:["Red","Blue","Charcoal","Grey","Green","Brown","Terracotta","Stone Grey"],
     lengths:[2,2.5,3], finish:"Pre-painted / confirm with sales team",
     desc:"A modern roofing profile designed with strong ridges that provide a clean appearance and reliable structural performance. Box Profile is suitable for residential, commercial and utility structures.",
-    tag:"Strong. Modern. Reliable."
+    tag:"Strong. Modern. Reliable.",
+    img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789823697/Box-Profile-914-Charcoal-Grey-Matt-1.jpg_yrq9gw.webp"
   },
   {
     id:"corrugated", name:"Corrugated Mabati", profile:"Corrugated",
@@ -709,7 +730,8 @@ const PRODUCTS = [
     colours:["Red","Blue","Charcoal","Grey","Green","Brown","Terracotta","Stone Grey"],
     lengths:[2,2.5,3], finish:"Confirm with sales team",
     desc:"The classic corrugated roofing profile. A practical choice for a range of residential, agricultural, commercial and utility structures.",
-    tag:"Practical. Affordable. Proven."
+    tag:"Practical. Affordable. Proven.",
+    img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824198/images_9_pi3bs2.jpg"
   },
   {
     id:"dumuzaz", name:"Dumuzaz Mabati", profile:"Dumuzaz",
@@ -717,7 +739,8 @@ const PRODUCTS = [
     colours:["Red","Blue","Charcoal","Grey","Green","Brown","Terracotta","Stone Grey"],
     lengths:[2,2.5,3], finish:"Confirm with sales team",
     desc:"An economical roofing option suitable for customers looking for practical roofing coverage at a competitive price.",
-    tag:"Simple. Affordable. Practical."
+    tag:"Simple. Affordable. Practical.",
+    img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824233/e26807_a8274aef2db048269835c2d91236f01a_mv2_p7faon.jpg"
   },
   {
     id:"roman-tile", name:"Roman Tile Mabati", profile:"Roman Tile",
@@ -725,7 +748,8 @@ const PRODUCTS = [
     colours:["Red","Blue","Charcoal","Grey","Green","Brown","Terracotta","Stone Grey"],
     lengths:[2,2.5,3], finish:"Confirm with sales team",
     desc:"A tile-inspired roofing profile that combines a modern appearance with practical roofing performance.",
-    tag:"A modern tile-inspired finish."
+    tag:"A modern tile-inspired finish.",
+    img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824282/Romatile-Charcoal-Grey-matte-gauge-28_fiqgbc.jpg"
   },
   {
     id:"versatile", name:"Versatile Mabati", profile:"Versatile",
@@ -733,7 +757,8 @@ const PRODUCTS = [
     colours:["Red","Blue","Charcoal","Grey","Green","Brown","Terracotta","Stone Grey"],
     lengths:[2,2.5,3], finish:"Confirm with sales team",
     desc:"A premium-style roofing option offering a distinctive appearance for customers looking beyond traditional roofing profiles.",
-    tag:"Premium appearance. Reliable performance."
+    tag:"Premium appearance. Reliable performance.",
+    img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824330/Versatile-Tile-Red-Matt-30-Gauge-1-1_z9tjhm.jpg"
   },
   {
     id:"eurotile", name:"Eurotile Mabati", profile:"Eurotile",
@@ -741,7 +766,8 @@ const PRODUCTS = [
     colours:["Red","Blue","Charcoal","Grey","Green","Brown","Terracotta","Stone Grey"],
     lengths:[2,2.5,3], finish:"Confirm with sales team",
     desc:"A tile-inspired roofing profile designed for customers looking for a more refined roofing finish.",
-    tag:"Style meets roofing performance."
+    tag:"Style meets roofing performance.",
+    img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824361/U-Tile-Maroon-Matt-GAUGE-30_cwzgm7.webp"
   },
   {
     id:"orientile", name:"Orientile Mabati", profile:"Orientile",
@@ -749,6 +775,7 @@ const PRODUCTS = [
     colours:["Red","Blue","Charcoal","Grey","Green","Brown","Terracotta","Stone Grey"],
     lengths:[2,2.5,3], finish:"Confirm with sales team",
     desc:"A distinctive tile-profile roofing option suitable for projects where appearance and roofing performance both matter.",
+    img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824455/Oriental-Tile-Charcoal-Grey-Matt-1-2_bwn2n2.jpg",
     tag:"Distinctive tile-profile roofing."
   },
   {
@@ -757,16 +784,16 @@ const PRODUCTS = [
     colours:["Red","Blue","Charcoal","Grey","Green","Brown","Terracotta","Stone Grey"],
     lengths:[2,2.5,3], finish:"Confirm with sales team",
     desc:"A modern tile-profile roofing option offering a distinctive finish for residential and other building projects.",
-    tag:"Modern tile-profile roofing."
+    tag:"Modern tile-profile roofing.",
+    img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824487/Mandarin-Tile-30-Gauge-Charcoal-Grey-Matt-1_d07ic6.jpg"
   }
 ];
 
+/* ACCESSORY IMAGES — same idea: update the img:"..." link for each item below. */
 const ACCESSORIES = [
-  {name:"Ridge Caps", desc:"Roofing accessories designed to provide finishing and protection along roof ridges."},
-  {name:"Valleys", desc:"Roofing valley components used to direct rainwater where roof sections meet."},
-  {name:"Roofing Nails", desc:"Fastening solutions for roofing installation."},
-  {name:"Ordinary Nails", desc:"General construction nails available alongside roofing materials."},
-  {name:"Rubber Washers", desc:"Washers used with roofing fasteners to help provide a secure, weather-resistant fixing."}
+  {id:"ridge-caps", name:"Ridge Caps", desc:"Roofing accessories designed to provide finishing and protection along roof ridges.", img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824523/14215064_ttnahl.jpg"},
+  {id:"valleys", name:"Valleys", desc:"Roofing valley components used to direct rainwater where roof sections meet.", img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824549/Decra-Valley-Tray-Forest-Green-1.jpg_ck8wem.webp"},
+  {id:"roofing-nails", name:"Roofing Nails", desc:"Fastening solutions for roofing installation.", img:"https://res.cloudinary.com/hztm3zo8/image/upload/v1789824586/IMG-20260919-WA0008_yl46pk.jpg"},
 ];
 
 const COLOUR_HEX = {
@@ -895,7 +922,10 @@ function setGaugeFilter(g){
 function prodCardHtml(p){
   return `
     <div class="prod-card">
-      <div class="prod-img" onclick="openProduct('${p.id}')"><!-- REPLACE IMAGE: mtaaniweb/kenyamabati/${p.id}.jpg -->${p.name}</div>
+      <div class="prod-img" onclick="openProduct('${p.id}')">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.remove()">
+        <span class="img-fallback">${p.name}</span>
+      </div>
       <div class="prod-body">
         <h3>${p.name}</h3>
         <div class="from">From</div>
@@ -920,7 +950,10 @@ function renderShop(){
     if(search==="" ){
       html += ACCESSORIES.map(a=>`
         <div class="prod-card">
-          <div class="prod-img">${a.name}</div>
+          <div class="prod-img">
+            <img src="${a.img}" alt="${a.name}" loading="lazy" onerror="this.remove()">
+            <span class="img-fallback">${a.name}</span>
+          </div>
           <div class="prod-body">
             <h3>${a.name}</h3>
             <p style="font-size:0.85rem;">${a.desc}</p>
@@ -960,7 +993,10 @@ function renderProductDetail(){
   const total = pricePerM * totalLength;
 
   document.getElementById("productDetailRoot").innerHTML = `
-    <div class="pd-img"><!-- REPLACE IMAGE: mtaaniweb/kenyamabati/${p.id}.jpg -->${p.name}</div>
+    <div class="pd-img">
+      <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.remove()">
+      <span class="img-fallback">${p.name}</span>
+    </div>
     <div>
       <div class="pd-tag">${p.tag}</div>
       <h1>${p.name}</h1>
